@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj": {}
+  },
+  "projects": {
+    "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj",
+        "projectName": "BlobHandles.Runtime",
+        "projectPath": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj",
+        "packagesPath": "/Users/x22080xx/.nuget/packages/",
+        "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/BlobHandles.Runtime/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/x22080xx/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
