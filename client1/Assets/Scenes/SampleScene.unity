@@ -303,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 20, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -342,6 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionAddress: /test/obj/position
+  rotationAddress: /test/obj/rotation
+  cameraController: {fileID: 0}
 --- !u!65 &1263157184
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -439,6 +441,7 @@ GameObject:
   - component: {fileID: 1951969459}
   - component: {fileID: 1951969458}
   - component: {fileID: 1951969460}
+  - component: {fileID: 1951969461}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -488,6 +491,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   display1WidthAddress: /display/1/width
   display2WidthAddress: /display/2/width
+--- !u!114 &1951969461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951969457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f8c0ee09dde4c5c92fc71056017b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlledCamera: {fileID: 963194227}
 --- !u!1 &2021073967
 GameObject:
   m_ObjectHideFlags: 0

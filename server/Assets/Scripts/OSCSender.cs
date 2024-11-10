@@ -74,4 +74,23 @@ public class OSCSender : MonoBehaviour
             Debug.Log("Error sending int: " + address + " " + value + " " + e);
         }
     }
+
+    public void SendQuaternionValue(string address, Quaternion value)
+    {
+        if (client == null) return;
+
+        try
+        {
+            // Issue
+            // OscCore.OscClient.Send() メソッドが、float[] (または object[] で float を渡した場合でも内部的には float[] として扱われる) を引数として受け取るオーバーロードを実装していない
+
+            client.Send(address, new int[] { (int)value.x, (int)value.y, (int)value.z, (int)value.w }); // int[] 配列に格納
+            Debug.Log("Sent " + address + " " + value);
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log("Error sending Quaternion: " + address + " " + value + " " + e);
+        }
+    }
+
 }
