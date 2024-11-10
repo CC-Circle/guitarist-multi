@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj",
+      "projectUniqueName": "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj",
       "projectName": "NtpTimestamp",
-      "projectPath": "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj",
+      "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj",
       "packagesPath": "/Users/x22080xx/.nuget/packages/",
-      "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/NtpTimestamp/",
+      "outputPath": "/Users/x22080xx/src/guitarist-multi/client1/Temp/obj/Debug/NtpTimestamp/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/x22080xx/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YHkdZJSITR8l8LkYNU9kwxo6OjKgmUF0g67ys25s8T5ZmgTne3zanrwFzHBvOk0PNSF9QBBbaReRldBoL3WTaA==",
+  "dgSpecHash": "9lxIgwB5J0d/QqViXE2XHdCxbBCpiwy0EiAFtAfH4FkBM1qzjcAHUqR5MMBkJ2zDdW3jIcACtLFKvbAm9Z2Utg==",
   "success": true,
-  "projectFilePath": "/Users/x22080xx/src/osc_1/OscCore.Editor.csproj",
+  "projectFilePath": "/Users/x22080xx/src/guitarist-multi/server/OscCore.Editor.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

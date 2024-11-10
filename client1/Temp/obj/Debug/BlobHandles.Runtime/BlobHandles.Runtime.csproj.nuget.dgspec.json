@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj": {}
+    "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj": {}
   },
   "projects": {
-    "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj": {
+    "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj",
+        "projectUniqueName": "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj",
         "projectName": "BlobHandles.Runtime",
-        "projectPath": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj",
+        "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj",
         "packagesPath": "/Users/x22080xx/.nuget/packages/",
-        "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/BlobHandles.Runtime/",
+        "outputPath": "/Users/x22080xx/src/guitarist-multi/client1/Temp/obj/Debug/BlobHandles.Runtime/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/x22080xx/.nuget/NuGet/NuGet.Config"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/x22080xx/src/osc_2/OscCore.Runtime.csproj": {}
+    "/Users/x22080xx/src/guitarist-multi/client1/OscCore.Runtime.csproj": {}
   },
   "projects": {
-    "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj": {
+    "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj",
+        "projectUniqueName": "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj",
         "projectName": "BlobHandles.Runtime",
-        "projectPath": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj",
+        "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj",
         "packagesPath": "/Users/x22080xx/.nuget/packages/",
-        "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/BlobHandles.Runtime/",
+        "outputPath": "/Users/x22080xx/src/guitarist-multi/client1/Temp/obj/Debug/BlobHandles.Runtime/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/x22080xx/.nuget/NuGet/NuGet.Config"
@@ -52,14 +52,14 @@
         }
       }
     },
-    "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj": {
+    "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj",
+        "projectUniqueName": "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj",
         "projectName": "NtpTimestamp",
-        "projectPath": "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj",
+        "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj",
         "packagesPath": "/Users/x22080xx/.nuget/packages/",
-        "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/NtpTimestamp/",
+        "outputPath": "/Users/x22080xx/src/guitarist-multi/client1/Temp/obj/Debug/NtpTimestamp/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/x22080xx/.nuget/NuGet/NuGet.Config"
@@ -100,14 +100,14 @@
         }
       }
     },
-    "/Users/x22080xx/src/osc_2/OscCore.Runtime.csproj": {
+    "/Users/x22080xx/src/guitarist-multi/client1/OscCore.Runtime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/x22080xx/src/osc_2/OscCore.Runtime.csproj",
+        "projectUniqueName": "/Users/x22080xx/src/guitarist-multi/client1/OscCore.Runtime.csproj",
         "projectName": "OscCore.Runtime",
-        "projectPath": "/Users/x22080xx/src/osc_2/OscCore.Runtime.csproj",
+        "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/OscCore.Runtime.csproj",
         "packagesPath": "/Users/x22080xx/.nuget/packages/",
-        "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/OscCore.Runtime/",
+        "outputPath": "/Users/x22080xx/src/guitarist-multi/client1/Temp/obj/Debug/OscCore.Runtime/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/x22080xx/.nuget/NuGet/NuGet.Config"
@@ -122,11 +122,11 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj": {
-                "projectPath": "/Users/x22080xx/src/osc_2/BlobHandles.Runtime.csproj"
+              "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj": {
+                "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/BlobHandles.Runtime.csproj"
               },
-              "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj": {
-                "projectPath": "/Users/x22080xx/src/osc_2/NtpTimestamp.csproj"
+              "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj": {
+                "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/NtpTimestamp.csproj"
               }
             }
           }

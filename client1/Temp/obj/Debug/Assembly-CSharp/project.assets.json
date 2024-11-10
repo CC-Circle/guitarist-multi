@@ -66,11 +66,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/x22080xx/src/osc_2/Assembly-CSharp.csproj",
+      "projectUniqueName": "/Users/x22080xx/src/guitarist-multi/client1/Assembly-CSharp.csproj",
       "projectName": "Assembly-CSharp",
-      "projectPath": "/Users/x22080xx/src/osc_2/Assembly-CSharp.csproj",
+      "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/Assembly-CSharp.csproj",
       "packagesPath": "/Users/x22080xx/.nuget/packages/",
-      "outputPath": "/Users/x22080xx/src/osc_2/Temp/obj/Debug/Assembly-CSharp/",
+      "outputPath": "/Users/x22080xx/src/guitarist-multi/client1/Temp/obj/Debug/Assembly-CSharp/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/x22080xx/.nuget/NuGet/NuGet.Config"
@@ -85,8 +85,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "/Users/x22080xx/src/osc_2/OscCore.Runtime.csproj": {
-              "projectPath": "/Users/x22080xx/src/osc_2/OscCore.Runtime.csproj"
+            "/Users/x22080xx/src/guitarist-multi/client1/OscCore.Runtime.csproj": {
+              "projectPath": "/Users/x22080xx/src/guitarist-multi/client1/OscCore.Runtime.csproj"
             }
           }
         }
