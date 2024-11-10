@@ -6,7 +6,7 @@ public class OSCReciever : MonoBehaviour
     [SerializeField] private int port = 7000;
     public OscServer Server { get; private set; } // OSCServer instance
 
-    private void Start()
+    private void Awake()
     {
         try
         {

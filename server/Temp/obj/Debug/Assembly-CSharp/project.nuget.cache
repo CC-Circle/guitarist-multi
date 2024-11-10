@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1eILrvmmm7trnyhM7rbJcTiWnuCs54yM0LvIMNourAD1IoVsEIiHX6vhrBoLhjkJvizcvgrTTB/gYd7SQZCnAg==",
+  "dgSpecHash": "DZmCUhklXcAMvP5BRTUk0uLo91nuXcprM6skyOkKb9OroedLaDU7N+2XYBuArBoywl36Cz6e/EiUtV4H928HtQ==",
   "success": true,
-  "projectFilePath": "/Users/x22080xx/src/osc_1/Assembly-CSharp.csproj",
+  "projectFilePath": "/Users/x22080xx/src/guitarist-multi/server/Assembly-CSharp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

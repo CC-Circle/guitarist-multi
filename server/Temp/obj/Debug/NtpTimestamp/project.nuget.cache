@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ruUWhMQyGcWita7vvO8MgTr36wdYJRhCWY0Q/EO8DJoVZC2MA69v41bPfujofR8dxpfRdX0sfHg9zccReb3u7A==",
+  "dgSpecHash": "HtK98waSV0OKVd8m6pfa88ILUsYdNgEiBJ7mlmrMiORj7wqqyo49fDRE+2iE6a3ZP9EdMu+KP7adv+iXl+A9OQ==",
   "success": true,
-  "projectFilePath": "/Users/x22080xx/src/osc_1/NtpTimestamp.csproj",
+  "projectFilePath": "/Users/x22080xx/src/guitarist-multi/server/NtpTimestamp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

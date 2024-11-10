@@ -59,4 +59,19 @@ public class OSCSender : MonoBehaviour
             Debug.Log("Error sending string: " + address + " " + value + " " + e);
         }
     }
+
+    public void SendIntValue(string address, int value)
+    {
+        if (client == null) return;
+
+        try
+        {
+            client.Send(address, value);
+            Debug.Log("Sent " + address + " " + value);
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log("Error sending int: " + address + " " + value + " " + e);
+        }
+    }
 }
