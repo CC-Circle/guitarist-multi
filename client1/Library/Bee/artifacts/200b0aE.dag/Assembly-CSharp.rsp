@@ -365,6 +365,7 @@
 "Assets/Scripts/GetMessage.cs"
 "Assets/Scripts/GetObjTransform.cs"
 "Assets/Scripts/OSCReciever.cs"
+"Assets/Scripts/StopCharacterMovement.cs"
 "Assets/Scripts/UnityMainThreadDispatcher.cs"
 "Assets/VisibilityController.cs"
 -langversion:9.0

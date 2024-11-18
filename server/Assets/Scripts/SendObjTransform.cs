@@ -7,7 +7,7 @@ public class SendObjTransform : MonoBehaviour
     private OSCSender oscSender;
     [SerializeField] private string positionAddress = "/test/obj/position";
     [SerializeField] private string rotationAddress = "/test/obj/rotation";
-    private float sendInterval = 1.0f; // 1 second
+    private float sendInterval = 0.3f; // 1 second
     private float timer;
     [SerializeField] private Camera mainCamera;
 

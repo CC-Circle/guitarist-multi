@@ -9,7 +9,7 @@ public class VisibilityController : MonoBehaviour
     {
         objRenderer = GetComponent<Renderer>();
         // "Main Camera2" のカメラを指定
-        targetCamera = GameObject.Find("Main Camera2").GetComponent<Camera>();
+        targetCamera = GameObject.Find("Main Camera1").GetComponent<Camera>();
     }
 
     void Update()
