@@ -28,7 +28,7 @@ public class SendMessage : MonoBehaviour
             // sendInterval seconds have passed
             if (timer >= sendInterval)
             {
-                oscSender.SendStringValue(address, message);
+                //oscSender.SendStringValue(address, message);
                 timer = 0;
             }
         }

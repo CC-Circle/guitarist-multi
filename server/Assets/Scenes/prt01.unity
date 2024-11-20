@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 685557358}
   - component: {fileID: 685557357}
   - component: {fileID: 685557362}
+  - component: {fileID: 685557363}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9868c2bac294fd590baea7d1962d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionAddress: /test/obj/position1
+  positionAddress: /OscCore/float
   rotationAddress: /test/obj/rotation1
   mainCamera: {fileID: 0}
 --- !u!65 &685557358
@@ -285,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 685557356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9, y: 49.1, z: -30.08}
+  m_LocalPosition: {x: 3.9, y: 59.7, z: -30.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -298,12 +299,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685557356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78618b54e707e490abfc343872e6e7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+--- !u!114 &685557363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685557356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3c79e3c4c6f464bbec797ac18f4ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1277690994
 MonoBehaviour:
   m_ObjectHideFlags: 0

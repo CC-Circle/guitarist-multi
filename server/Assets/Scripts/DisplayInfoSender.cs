@@ -21,7 +21,7 @@ public class DisplayInfoSender : MonoBehaviour
         }
 
         // Get display resolutions and send them immediately
-        oscSender.SendIntValue(display1WidthAddress, DisplayConstants.DisplayWidth);
-        oscSender.SendIntValue(display2WidthAddress, DisplayConstants.DisplayWidth);
+        // oscSender.SendIntValue(display1WidthAddress, DisplayConstants.DisplayWidth);
+        // oscSender.SendIntValue(display2WidthAddress, DisplayConstants.DisplayWidth);
     }
 }
