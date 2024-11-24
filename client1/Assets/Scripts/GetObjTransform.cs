@@ -5,7 +5,7 @@ using OscCore;
 
 public class GetObjTransform : MonoBehaviour
 {
-    // OSCメッセージを受信するためのアドレス
+    //OSCメッセージを受信するためのアドレス
     [SerializeField] private string positionAddress = "/test/obj/position"; // 位置情報を受け取るアドレス
     [SerializeField] private string rotationAddress = "/test/obj/rotation"; // 回転情報を受け取るアドレス
 
@@ -25,14 +25,6 @@ public class GetObjTransform : MonoBehaviour
             return;
         }
 
-        // displayInfoReceiverが必要な場合（現在は使用していないが、コメントアウトされている）
-        // displayInfoReceiver = FindObjectOfType<DisplayInfoReceiver>();
-        // if (displayInfoReceiver == null)
-        // {
-        //     Debug.LogError("DisplayInfoReceiver not found!");
-        //     return;
-        // }
-
         // CameraControllerのインスタンスを取得、もし見つからなければエラーメッセージを表示
         if (cameraController == null)
         {
@@ -49,29 +41,7 @@ public class GetObjTransform : MonoBehaviour
         //oscReceiver.Server.TryAddMethod(rotationAddress, ReadRotation);
     }
 
-    // // 受信した位置情報を処理するメソッド
-    // private void ReadPosition(OscMessageValues values)
-    // {
-    //     // Vector3 localPosition = new Vector3(
-    //     //     values.ReadFloatElement(0), 
-    //     //     values.ReadFloatElement(1), 
-    //     //     values.ReadFloatElement(2)
-    //     // );
-
-    //     float x = values.ReadFloatElement(0); // 1番目の値
-    //     float y = values.ReadFloatElement(1); // 2番目の値
-    //     float z = values.ReadFloatElement(2); // 3番目の値
-
-    //     Vector3 localPosition = new Vector3(x,y,z);
-
-    //     // 受け取った位置をUnityのメインスレッドで適用
-    //     UnityMainThreadDispatcher.Enqueue(() =>
-    //     {
-    //         // オブジェクトの位置を更新
-    //         transform.position = localPosition;
-    //         Debug.Log("Received position: " + localPosition); // デバッグログに受信した位置を表示
-    //     });
-    // }
+   
 
     // 受信した文字列を処理するメソッド
     private void ReadPositionFromString(OscMessageValues values)
@@ -80,7 +50,7 @@ public class GetObjTransform : MonoBehaviour
         string receivedString = values.ReadStringElement(0);  // OSCメッセージの最初の要素を取得
 
         // 受信した文字列をデバッグログに表示
-        Debug.Log("Received string: " + receivedString);
+        //Debug.Log("Received string: " + receivedString);
 
         // 文字列を分解して座標を抽出（例: "x: 1.23, y: 4.56, z: 7.89"）
         // ここでは、"x: ", "y: ", "z: " でそれぞれの値を抽出
@@ -111,6 +81,9 @@ public class GetObjTransform : MonoBehaviour
     }
 
 
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     // // 受信した回転情報を処理するメソッド
     // private void ReadRotation(OscMessageValues values)
     // {
@@ -124,6 +97,30 @@ public class GetObjTransform : MonoBehaviour
     //         // オブジェクトの回転を更新
     //         transform.localRotation = localRotation;
     //         Debug.Log("Received rotation: " + localRotation); // デバッグログに受信した回転を表示
+    //     });
+    // }
+
+     // // 受信した位置情報を処理するメソッド
+    // private void ReadPosition(OscMessageValues values)
+    // {
+    //     // Vector3 localPosition = new Vector3(
+    //     //     values.ReadFloatElement(0), 
+    //     //     values.ReadFloatElement(1), 
+    //     //     values.ReadFloatElement(2)
+    //     // );
+
+    //     float x = values.ReadFloatElement(0); // 1番目の値
+    //     float y = values.ReadFloatElement(1); // 2番目の値
+    //     float z = values.ReadFloatElement(2); // 3番目の値
+
+    //     Vector3 localPosition = new Vector3(x,y,z);
+
+    //     // 受け取った位置をUnityのメインスレッドで適用
+    //     UnityMainThreadDispatcher.Enqueue(() =>
+    //     {
+    //         // オブジェクトの位置を更新
+    //         transform.position = localPosition;
+    //         Debug.Log("Received position: " + localPosition); // デバッグログに受信した位置を表示
     //     });
     // }
 }

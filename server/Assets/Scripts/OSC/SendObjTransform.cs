@@ -16,9 +16,8 @@ public class SendObjTransform : MonoBehaviour
 
     void Start()
     {
-        // AddressSystemから一意のアドレスを取得
-        positionAddress = AddressSystem.CreateAddress(gameObject);
-        Debug.Log($"Assigned Address: {positionAddress}");
+        // オブジェクトの名前をそのままアドレスとして使用
+        positionAddress = gameObject.name;  // オブジェクトの名前をアドレスに設定
 
         oscSender = FindObjectOfType<OSCSender>();
 

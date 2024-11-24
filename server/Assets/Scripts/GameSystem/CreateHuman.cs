@@ -5,9 +5,10 @@ using UnityEngine;
 public class CreateHuman : MonoBehaviour
 {
     [SerializeField] private GameObject emptyPrefab;  // 空のオブジェクトのプレハブ
-    [SerializeField] private float spawnInterval = 1.0f;  // 生成間隔（秒）
+    [SerializeField] private float spawnInterval = 3.0f;  // 生成間隔（秒）
     private Transform dynamicObjectParent;  // DynamicObjectのTransform参照
     private Coroutine spawnCoroutine;  // コルーチンを制御するためのフィールド
+    private OSCSender oscSender;
 
     void Start()
     {
@@ -28,25 +29,66 @@ public class CreateHuman : MonoBehaviour
 
         dynamicObjectParent = dynamicObject.transform;
 
-        // 1秒おきに生成するコルーチンを開始
-        spawnCoroutine = StartCoroutine(SpawnEmptyObjects());
+        // OSC Senderを取得
+        oscSender = FindObjectOfType<OSCSender>();
+        if (oscSender == null)
+        {
+            Debug.LogError("OscSender not found in the scene!");
+        }
+
+        // コルーチンがすでに開始されているか確認
+        if (spawnCoroutine == null)
+        {
+            spawnCoroutine = StartCoroutine(SpawnEmptyObjects());
+        }
     }
 
     private IEnumerator SpawnEmptyObjects()
     {
         while (true)
         {
-            // 空のオブジェクトを生成
-            Vector3 spawnPosition = transform.position;  // 親オブジェクトの位置を取得
-            GameObject newObject = Instantiate(emptyPrefab, spawnPosition, Quaternion.identity); // 生成
+            // オブジェクトを生成
+            GameObject newObject = CreateEmptyObject();
 
-            // ワールド座標はそのまま、ヒエラルキー上でDynamicObjectの子に設定
-            newObject.transform.SetParent(dynamicObjectParent, true);
+            // 一意のアドレスを取得
+            string positionAddress = GenerateAddress(newObject);
 
-            Debug.Log("Empty Object Created at position: " + spawnPosition + ", under DynamicObject in hierarchy");
+            // オブジェクトの名前にアドレスを設定
+            newObject.name = positionAddress;
+
+            // OSCで送信
+            SendOSC(positionAddress);
 
             // 指定された時間待機
             yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    // 空のオブジェクトを生成するメソッド
+    private GameObject CreateEmptyObject()
+    {
+        Vector3 spawnPosition = transform.position;  // 親オブジェクトの位置を取得
+        GameObject newObject = Instantiate(emptyPrefab, spawnPosition, Quaternion.identity); // 生成
+
+        // ワールド座標はそのまま、ヒエラルキー上でDynamicObjectの子に設定
+        newObject.transform.SetParent(dynamicObjectParent, true);
+
+        return newObject;
+    }
+
+    // オブジェクトに一意のアドレスを生成するメソッド
+    private string GenerateAddress(GameObject newObject)
+    {
+        return AddressSystem.CreateAddress(newObject);  // 新しいオブジェクトに対してアドレスを生成
+    }
+
+    // OSCで生成されたアドレスを送信するメソッド
+    private void SendOSC(string positionAddress)
+    {
+        if (oscSender != null)
+        {
+            oscSender.SendAddress("/OscCore/instancemanager", positionAddress);  // 生成されたアドレスを送信
+            //Debug.Log($"Sent address: {positionAddress} to /OscCore/instancemanager");
         }
     }
 

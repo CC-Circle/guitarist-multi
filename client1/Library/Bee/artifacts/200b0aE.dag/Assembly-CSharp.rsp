@@ -363,10 +363,13 @@
 "Assets/Scripts/DisplayInfoReceiver.cs"
 "Assets/Scripts/GetMessage.cs"
 "Assets/Scripts/GetObjTransform.cs"
+"Assets/Scripts/InstanceManager.cs"
 "Assets/Scripts/MoveForward.cs"
+"Assets/Scripts/ObjectSystemManager.cs"
 "Assets/Scripts/OSCReciever.cs"
 "Assets/Scripts/StopCharacterMovement.cs"
 "Assets/Scripts/UnityMainThreadDispatcher.cs"
+"Assets/Scripts/VisibilityChecker.cs"
 "Assets/VisibilityController.cs"
 -langversion:9.0
 

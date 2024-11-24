@@ -3,10 +3,25 @@ using UnityEngine;
 public class SelfDestruct : MonoBehaviour
 {
     [SerializeField] private float destroyAfterSeconds = 5.0f; // 破壊されるまでの時間
-    [SerializeField] private string positionAddress; // オブジェクトのアドレス
+    private string positionAddress; // オブジェクトのアドレス
+
+    private SendObjTransform sendObjtransform;
 
     void Start()
     {
+        // 同じオブジェクトにアタッチされているPositionManagerを取得
+        SendObjTransform sendObjtransform = GetComponent<SendObjTransform>();
+
+        if (sendObjtransform != null)
+        {
+            // positionAddressを取得
+            positionAddress = sendObjtransform.positionAddress;
+            //Debug.Log("Position Address: " + address);
+        }
+        else
+        {
+            //Debug.LogError("PositionManagerが見つかりません！");
+        }
         // 指定された秒数後に自身を破壊
         Invoke(nameof(DestroySelf), destroyAfterSeconds);
     }
@@ -18,7 +33,7 @@ public class SelfDestruct : MonoBehaviour
         if (addressSystemObject != null)
         {
             AddressSystem.MarkAsUnused(positionAddress); // AddressSystemクラス名で呼び出し
-            //Debug.Log("Address returned to AddressSystem: " + positionAddress);
+            //Debug.Log(positionAddress);
         }
         else
         {

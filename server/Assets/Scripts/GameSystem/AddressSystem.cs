@@ -3,12 +3,25 @@ using UnityEngine;
 
 public class AddressSystem : MonoBehaviour
 {
-    private static HashSet<string> usedAddresses = new HashSet<string>(); // 使用済みアドレスのセット
+    public static HashSet<string> usedAddresses = new HashSet<string>(); // 使用済みアドレスのセット
     private static HashSet<string> unusedAddresses = new HashSet<string>(); // 未使用アドレスのセット
 
     // アドレスを生成し、一意なものを返す
     public static string CreateAddress(GameObject obj)
     {
+        // 未使用アドレスがある場合は再利用
+        if (unusedAddresses.Count > 0)
+        {
+            foreach (var unusedAddress in unusedAddresses)
+            {
+                unusedAddresses.Remove(unusedAddress);
+                usedAddresses.Add(unusedAddress);
+                //Debug.Log($"Reusing unused address: {unusedAddress}");
+                return unusedAddress;
+            }
+        }
+
+        // 未使用アドレスがない場合は新しいアドレスを生成
         string baseAddress = $"/OscCore/{obj.name}";
         string address = baseAddress;
         int counter = 1;
@@ -16,12 +29,14 @@ public class AddressSystem : MonoBehaviour
         // 一意のアドレスになるまで確認
         while (usedAddresses.Contains(address) || unusedAddresses.Contains(address))
         {
+            //Debug.Log($"Checking for uniqueness: {address}");
             address = $"{baseAddress}/{counter}";
             counter++;
         }
 
         // 使用済みアドレスとして登録
         usedAddresses.Add(address);
+        //Debug.Log($"New address created: {address}");
         return address;
     }
 
@@ -32,7 +47,7 @@ public class AddressSystem : MonoBehaviour
         {
             usedAddresses.Remove(address);
             unusedAddresses.Add(address);
-            Debug.Log($"Address {address} marked as unused.");
+            //Debug.Log($"Address {address} marked as unused.");
         }
         else
         {
@@ -79,4 +94,3 @@ public class AddressSystem : MonoBehaviour
         }
     }
 }
-

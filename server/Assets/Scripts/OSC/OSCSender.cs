@@ -19,7 +19,102 @@ public class OSCSender : MonoBehaviour
         }
     }
 
-    // 指定したアドレスに対してfloat型の値を送信するメソッド
+    //指定したアドレスに対してstring型の値を送信するメソッド
+    public void SendStringValue(string address, Vector3 value)
+    {
+        foreach (var client in clients)
+        {
+            if (client == null) return;
+
+            try
+            {
+                // Vector3の値を文字列に変換
+                string valueString = $"x: {value.x}, y: {value.y}, z: {value.z}";
+
+                // 文字列としてOSCメッセージを送信
+                client.Send(address, valueString);
+
+                //Debug.Log("Sent " + address + " " + valueString);
+            }
+            catch (System.Exception e)
+            {
+                //Debug.Log("Error sending string: " + address + " " + value + " " + e);
+            }
+        }
+    }
+
+    // 一意のアドレスとそのデータを送信するメソッド
+    public void SendAddress(string address, string data)
+    {
+        foreach (var client in clients)
+        {
+            if (client == null) return;
+
+            try
+            {
+                // メッセージを送信
+                client.Send(address, data);
+
+                // デバッグログ（送信された内容を確認）
+                Debug.Log($"Sent OSC message to {address}: {data}");
+            }
+            catch (System.Exception e)
+            {
+                //Debug.Log("Error sending string: " + address + " " + value + " " + e);
+            }
+        }
+        
+    }
+
+
+
+
+
+
+
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // 指定したアドレスに対してint型の値を送信するメソッド
+    // public void SendIntValue(string address, int value)
+    // {
+    //     foreach (var client in clients)
+    //     {
+    //         if (client == null) return;
+
+    //         try
+    //         {
+    //             client.Send(address, value); // 整数値をOSCメッセージとして送信
+    //             Debug.Log("Sent " + address + " " + value);
+    //         }
+    //         catch (System.Exception e)
+    //         {
+    //             Debug.Log("Error sending int: " + address + " " + value + " " + e);
+    //         }
+    //     }
+    // }
+
+    // 指定したアドレスに対してQuaternion型の値を送信するメソッド
+    // public void SendQuaternionValue(string address, Quaternion value)
+    // {
+    //     foreach (var client in clients)
+    //     {
+    //         if (client == null) return;
+
+    //         try
+    //         {
+    //             // Quaternionを4つのfloat値として送信（x, y, z, wの順）
+    //             client.Send("/OscCore/float", new float[] { (float)value.x, (float)value.y, (float)value.z, (float)value.w });
+    //             Debug.Log("Sent " + address + " " + value); // 送信内容をログ出力
+    //         }
+    //         catch (System.Exception e)
+    //         {
+    //             Debug.Log("Error sending Quaternion: " + address + " " + value + " " + e); // 送信エラーをログ出力
+    //         }
+    //     }
+    // }
+
+    //   指定したアドレスに対してfloat型の値を送信するメソッド
     // public void SendFloatValue(string address, float value)
     // {
     //     foreach (var client in clients) // 全てのOSCクライアントに対して送信
@@ -64,67 +159,4 @@ public class OSCSender : MonoBehaviour
     // }
 
 
-
-    //指定したアドレスに対してstring型の値を送信するメソッド
-    public void SendStringValue(string address, Vector3 value)
-    {
-        foreach (var client in clients)
-        {
-            if (client == null) return;
-
-            try
-            {
-                // Vector3の値を文字列に変換
-                string valueString = $"x: {value.x}, y: {value.y}, z: {value.z}";
-
-                // 文字列としてOSCメッセージを送信
-                client.Send(address, valueString);
-
-                //Debug.Log("Sent " + address + " " + valueString);
-            }
-            catch (System.Exception e)
-            {
-                //Debug.Log("Error sending string: " + address + " " + value + " " + e);
-            }
-        }
-    }
-
-    // 指定したアドレスに対してint型の値を送信するメソッド
-    // public void SendIntValue(string address, int value)
-    // {
-    //     foreach (var client in clients)
-    //     {
-    //         if (client == null) return;
-
-    //         try
-    //         {
-    //             client.Send(address, value); // 整数値をOSCメッセージとして送信
-    //             Debug.Log("Sent " + address + " " + value);
-    //         }
-    //         catch (System.Exception e)
-    //         {
-    //             Debug.Log("Error sending int: " + address + " " + value + " " + e);
-    //         }
-    //     }
-    // }
-
-    // 指定したアドレスに対してQuaternion型の値を送信するメソッド
-    // public void SendQuaternionValue(string address, Quaternion value)
-    // {
-    //     foreach (var client in clients)
-    //     {
-    //         if (client == null) return;
-
-    //         try
-    //         {
-    //             // Quaternionを4つのfloat値として送信（x, y, z, wの順）
-    //             client.Send("/OscCore/float", new float[] { (float)value.x, (float)value.y, (float)value.z, (float)value.w });
-    //             Debug.Log("Sent " + address + " " + value); // 送信内容をログ出力
-    //         }
-    //         catch (System.Exception e)
-    //         {
-    //             Debug.Log("Error sending Quaternion: " + address + " " + value + " " + e); // 送信エラーをログ出力
-    //         }
-    //     }
-    // }
 }
