@@ -34,9 +34,9 @@ public class AddressSystem : MonoBehaviour
             counter++;
         }
 
-        // 使用済みアドレスとして登録
+        //使用済みアドレスとして登録
         usedAddresses.Add(address);
-        //Debug.Log($"New address created: {address}");
+        Debug.Log($"New address created: {address}");
         return address;
     }
 

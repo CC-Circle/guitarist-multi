@@ -1,79 +1,76 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using OscCore;
 
 public class InstanceManager : MonoBehaviour
 {
-    //OSCメッセージを受信するためのアドレス
-    private string nameAddress = "/OscCore/instancemanager"; // 位置情報を受け取るアドレス
+    private string nameAddress = "/OscCore/instancemanager"; // OSCアドレス
     private OSCReciever oscReceiver; // OSCReceiverのインスタンス
-    [SerializeField] private CameraController cameraController; // カメラコントローラーの参照
 
+    [SerializeField] private List<GameObject> prefabs; // プレハブを登録するリスト
+    private Dictionary<string, GameObject> prefabDictionary; // プレハブ名とプレハブの対応付け辞書
 
-    // Start is called before the first frame update
     private void Start()
     {
-        // OSCReceiverのインスタンスを取得
-        oscReceiver = FindObjectOfType<OSCReciever>();
-        if (oscReceiver == null || oscReceiver.Server == null)
+        // プレハブ辞書を初期化
+        prefabDictionary = new Dictionary<string, GameObject>();
+        foreach (var prefab in prefabs)
         {
-            Debug.LogError("OSCReceiver or OSC Server not found!");
-            return;
-        }
-
-        // CameraControllerのインスタンスを取得
-        // if (cameraController == null)
-        // {
-        //     Debug.LogError("CameraController not found!");
-        //     return;
-        // }
-
-        // すでに登録されているか確認する方法が無いため、TryAddMethodが失敗してもエラーログを出す
-        bool methodAdded = oscReceiver.Server.TryAddMethod(nameAddress, HandlePositionAddress);
-        if (!methodAdded)
-        {
-            Debug.LogWarning($"Method for address {nameAddress} is already registered.");
-        }
-    }
-
-    // OSCメッセージを受信したときに呼び出されるコールバック関数
-    private void HandlePositionAddress(OscMessageValues values)
-    {
-        // 受信したOSCメッセージから文字列を取得
-        string message = values.ReadStringElement(0);  // OSCメッセージの最初の要素を取得
-
-        // データから "human" を取得する
-        string[] messageParts = message.Split('/');  // '/' で分割
-        if (messageParts.Length >= 2)
-        {
-            string objectName = messageParts[1];  // "human"
-
-            // "human" というプレハブをリソースから探す
-            if (objectName == "human")
+            if (prefab != null)
             {
-                // Resources/Prefabs フォルダからプレハブをロード
-                GameObject human = Resources.Load<GameObject>("Prefabs/human");
-                if (human != null)
-                {
-                    // プレハブをインスタンス化（シーンに生成）
-                    Vector3 spawnPosition = new Vector3(0, 0, 0);  // 任意の位置に生成（位置は適宜調整）
-                    GameObject humanObject = Instantiate(human, spawnPosition, Quaternion.identity);
-
-                    humanObject.name = message;
-
-                    // 生成したオブジェクトを無効化
-                    humanObject.SetActive(false);
-
-                    // 追加の処理があればここで行う
-                    Debug.Log($"Created {objectName} at position {spawnPosition}に生成しました");
-                }
-                else
-                {
-                    Debug.LogError($"Prefab for {objectName} not found in Resources/Prefabs");
-                }
+                prefabDictionary[prefab.name] = prefab;
             }
         }
 
+        // OSCReceiverを取得
+        oscReceiver = FindObjectOfType<OSCReciever>();
+        if (oscReceiver == null || oscReceiver.Server == null)
+        {
+            Debug.LogError("OSCReceiverまたはOSC Serverが見つかりません！");
+            return;
+        }
+
+        // OSCアドレスにコールバックを登録
+        bool methodAdded = oscReceiver.Server.TryAddMethod(nameAddress, HandlePositionAddress);
+        if (!methodAdded)
+        {
+            Debug.LogWarning($"アドレス{nameAddress}へのメソッド登録に失敗しました。すでに登録されている可能性があります。");
+        }
+    }
+
+    // OSCメッセージの処理
+    private void HandlePositionAddress(OscMessageValues values)
+    {
+        // メッセージ内容を取得
+        string message = values.ReadStringElement(0);  
+        //Debug.Log($"受信メッセージ: {message}");
+
+        // メッセージを解析してオブジェクト名を取得
+        string[] messageParts = message.Split('/');
+        if (messageParts.Length >= 2)
+        {
+            string objectName = messageParts[2];
+            //Debug.Log($"解析結果: {objectName}");
+
+            UnityMainThreadDispatcher.Enqueue(() =>
+            {
+                if (prefabDictionary.TryGetValue(objectName, out GameObject prefab))
+                {
+                    // InstanceManager の Transform を取得
+                    Transform instanceManagerTransform = this.transform;
+
+                    // プレハブをインスタンス化し、InstanceManager の子として配置
+                    Vector3 spawnPosition = instanceManagerTransform.position; // InstanceManager の位置
+                    GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity, instanceManagerTransform);
+
+                    obj.name = message; // オブジェクト名を設定
+                    //Debug.Log($"{objectName} を {spawnPosition} に生成し、InstanceManager の子にしました。");
+                }
+                else
+                {
+                    Debug.LogError($"プレハブ {objectName} が見つかりません！");
+                }
+            });
+        }
     }
 }

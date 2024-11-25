@@ -48,7 +48,7 @@ public class OSCSender : MonoBehaviour
     {
         foreach (var client in clients)
         {
-            if (client == null) return;
+            if (client == null) continue;
 
             try
             {
@@ -60,10 +60,9 @@ public class OSCSender : MonoBehaviour
             }
             catch (System.Exception e)
             {
-                //Debug.Log("Error sending string: " + address + " " + value + " " + e);
+                Debug.Log("Error sending string: " + address + " " + data + " " + e);
             }
         }
-        
     }
 
 

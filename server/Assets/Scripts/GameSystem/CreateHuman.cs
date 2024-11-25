@@ -2,23 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateHuman : MonoBehaviour
+public class CreateHumans : MonoBehaviour
 {
     [SerializeField] private GameObject emptyPrefab;  // 空のオブジェクトのプレハブ
-    [SerializeField] private float spawnInterval = 3.0f;  // 生成間隔（秒）
+    //[SerializeField] private float spawnInterval = 3.0f;  // 生成間隔（秒）
     private Transform dynamicObjectParent;  // DynamicObjectのTransform参照
     private Coroutine spawnCoroutine;  // コルーチンを制御するためのフィールド
     private OSCSender oscSender;
 
     void Start()
     {
-        // プレハブが設定されていない場合にエラーメッセージを表示
-        if (emptyPrefab == null)
-        {
-            Debug.LogError("Empty prefab is not assigned!");
-            return;
-        }
-
         // DynamicObjectをシーンから探す
         GameObject dynamicObject = GameObject.Find("DynamicObject");
         if (dynamicObject == null)
@@ -35,33 +28,25 @@ public class CreateHuman : MonoBehaviour
         {
             Debug.LogError("OscSender not found in the scene!");
         }
-
-        // コルーチンがすでに開始されているか確認
-        if (spawnCoroutine == null)
-        {
-            spawnCoroutine = StartCoroutine(SpawnEmptyObjects());
-        }
     }
 
-    private IEnumerator SpawnEmptyObjects()
+    public void CreateHuman()
     {
-        while (true)
-        {
-            // オブジェクトを生成
-            GameObject newObject = CreateEmptyObject();
+        // オブジェクトを生成
+        GameObject newObject = CreateEmptyObject();
+        //Debug.Log("生成しました");
 
-            // 一意のアドレスを取得
-            string positionAddress = GenerateAddress(newObject);
+        // 一意のアドレスを取得
+        string positionAddress = GenerateAddress(newObject);
+        //Debug.Log("アドレス取得しました");
 
-            // オブジェクトの名前にアドレスを設定
-            newObject.name = positionAddress;
+        // オブジェクトの名前にアドレスを設定
+        newObject.name = positionAddress;
+        //Debug.Log("名前を変更しました");
 
-            // OSCで送信
-            SendOSC(positionAddress);
-
-            // 指定された時間待機
-            yield return new WaitForSeconds(spawnInterval);
-        }
+        // OSCで送信
+        SendOSC(positionAddress);
+        //Debug.Log("送信しました");
     }
 
     // 空のオブジェクトを生成するメソッド

@@ -360,6 +360,7 @@
 "Assets/Scripts/GameSystem/AddressSystem.cs"
 "Assets/Scripts/GameSystem/CreateHuman.cs"
 "Assets/Scripts/GameSystem/FPSCounter.cs"
+"Assets/Scripts/GameSystem/InstanceManager.cs"
 "Assets/Scripts/GameSystem/MagicSpawner.cs"
 "Assets/Scripts/GameSystem/VisibilityController.cs"
 "Assets/Scripts/OSC/DisplayInfoSender.cs"

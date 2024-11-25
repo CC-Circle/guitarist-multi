@@ -6,7 +6,7 @@ using OscCore;
 public class GetObjTransform : MonoBehaviour
 {
     //OSCメッセージを受信するためのアドレス
-    [SerializeField] private string positionAddress = "/test/obj/position"; // 位置情報を受け取るアドレス
+    [SerializeField] private string positionAddress; // 位置情報を受け取るアドレス
     [SerializeField] private string rotationAddress = "/test/obj/rotation"; // 回転情報を受け取るアドレス
 
     private OSCReciever oscReceiver; // OSCReceiverのインスタンス
@@ -15,6 +15,8 @@ public class GetObjTransform : MonoBehaviour
 
     private void Start()
     {
+        positionAddress = this.name;
+
         // シーン内に存在するOSCReceiverを検索
         oscReceiver = FindObjectOfType<OSCReciever>();
 
@@ -71,7 +73,7 @@ public class GetObjTransform : MonoBehaviour
             {
                 // オブジェクトの位置を更新
                 transform.position = position;  // 位置をワールド座標で設定
-                Debug.Log("Updated position to: " + position);  // 位置をデバッグログに表示
+                //Debug.Log("Updated position to: " + position);  // 位置をデバッグログに表示
             });
         }
         else
