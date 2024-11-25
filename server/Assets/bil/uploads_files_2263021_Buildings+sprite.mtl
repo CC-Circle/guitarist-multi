@@ -1,0 +1,276 @@
+# Blender MTL File: 'Buildings sprite.blend'
+# Material Count: 26
+
+newmtl Air_Conditioner
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.635338 0.349748
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Air_Conditioner_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.635338 0.349748
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Air_Conditioner_Sides
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Awning
+Ns 25.490196
+Ka 1.000000 1.000000 1.000000
+Kd 0.017632 0.048182 0.000000
+Ks 0.071429 0.071429 0.071429
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Awning_NONE
+Ns 25.490196
+Ka 1.000000 1.000000 1.000000
+Kd 0.017632 0.048182 0.000000
+Ks 0.071429 0.071429 0.071429
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_1
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.315666 0.213010 0.136823
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\ZekeFaust\\Desktop\\Desktop tree\\Film\\Catboxfilms\\Film Projects\\In progress\\Untitled Emotionless film\\Footage\\VFX\\Beginning flyover\\Assets\\Building Textures\\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_1_BuildingsHighRise0347_1_S.jpg
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.315666 0.213010 0.136823
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_2
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.281259 0.640000 0.557724
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_3
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.618392 0.640000 0.315606
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_4
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_5
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_6
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_7
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.315666 0.213010 0.136823
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_7_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.315666 0.213010 0.136823
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\ZekeFaust\\Desktop\\Desktop tree\\Film\\Catboxfilms\\Film Projects\\In progress\\Untitled Emotionless film\\Footage\\VFX\\Beginning flyover\\Assets\\Building Textures\\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_Base
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.026042 0.174705 0.424966
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_Base_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.026042 0.174705 0.424966
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Building_Top
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.262215 0.248630
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\ZekeFaust\\Documents\\VideoCopilot\\Materials\\Pro_Shaders_maps\\Concrete_maps\\concrete_bare_05_diffuse.jpg
+
+newmtl Building_Top_BuildingsHighRise0347_1_S.jpg
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.262215 0.248630
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_Top_Edges
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.276077 0.002415
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Building_Top_Edges_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.276077 0.002415
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\ZekeFaust\\Documents\\VideoCopilot\\Materials\\Pro_Shaders_maps\\Concrete_maps\\concrete_bare_03_diffuse.jpg
+
+newmtl Chimney
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Door
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.032363 0.020388 0.013921
+Ks 0.151429 0.151429 0.151429
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\ZekeFaust\Desktop\Desktop tree\Film\Catboxfilms\Film Projects\In progress\Untitled Emotionless film\Footage\VFX\Beginning flyover\Assets\Building Textures\BuildingsHighRise0347_1_S.jpg
+
+newmtl Door_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.032363 0.020388 0.013921
+Ks 0.151429 0.151429 0.151429
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Helipad
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.140144 0.140144 0.140144
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Top_Exit
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd C:\Users\ZekeFaust\Documents\VideoCopilot\Materials\Pro_Shaders_maps\Concrete_maps\concrete_bare_05_diffuse.jpg
+
+newmtl Top_Exit_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\ZekeFaust\\Documents\\VideoCopilot\\Materials\\Pro_Shaders_maps\\Concrete_maps\\concrete_bare_02_diffuse.jpg
