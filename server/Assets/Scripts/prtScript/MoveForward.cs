@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 10f;  // 移動速度の調整用変数
+    [SerializeField] private float moveSpeed = 30f;  // 移動速度の調整用変数
     private bool hasRotated = false;               // 回転済みフラグ
 
     void Update()

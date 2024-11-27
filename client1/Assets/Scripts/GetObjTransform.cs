@@ -7,7 +7,7 @@ public class GetObjTransform : MonoBehaviour
 {
     //OSCメッセージを受信するためのアドレス
     [SerializeField] private string positionAddress; // 位置情報を受け取るアドレス
-    [SerializeField] private string rotationAddress = "/test/obj/rotation"; // 回転情報を受け取るアドレス
+    //[SerializeField] private string rotationAddress = "/test/obj/rotation"; // 回転情報を受け取るアドレス
 
     private OSCReciever oscReceiver; // OSCReceiverのインスタンス
     // private DisplayInfoReceiver displayInfoReceiver; // 必要に応じて表示情報を管理するオブジェクト（現在はコメントアウト）

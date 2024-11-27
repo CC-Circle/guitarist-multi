@@ -34,7 +34,7 @@ public class OSCSender : MonoBehaviour
                 // 文字列としてOSCメッセージを送信
                 client.Send(address, valueString);
 
-                //Debug.Log("Sent " + address + " " + valueString);
+                Debug.Log("Sent "+ " " + valueString);
             }
             catch (System.Exception e)
             {

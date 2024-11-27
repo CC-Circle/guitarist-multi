@@ -10,6 +10,8 @@ public class CreateHumans : MonoBehaviour
     private Coroutine spawnCoroutine;  // コルーチンを制御するためのフィールド
     private OSCSender oscSender;
 
+    protected string instanceAdress = "/OscCore/instancemanager";
+
     void Start()
     {
         // DynamicObjectをシーンから探す
@@ -72,7 +74,7 @@ public class CreateHumans : MonoBehaviour
     {
         if (oscSender != null)
         {
-            oscSender.SendAddress("/OscCore/instancemanager", positionAddress);  // 生成されたアドレスを送信
+            oscSender.SendAddress(instanceAdress, positionAddress);  // 生成されたアドレスを送信
             //Debug.Log($"Sent address: {positionAddress} to /OscCore/instancemanager");
         }
     }

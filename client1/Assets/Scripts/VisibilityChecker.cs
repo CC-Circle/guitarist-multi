@@ -21,52 +21,35 @@ public class VisibilityChecker : MonoBehaviour
         {
             AssignActiveCamera();
         }
+        //gameObject.SetActive(false);
     }
 
     void Update()
     {
-        //Debug.Log("wwww");
+        Debug.Log("wwww");
         // オブジェクトの中心位置を取得
         Vector3 objectPosition = transform.position;
 
         // 座標をビューポート座標に変換
         Vector3 viewportPosition = mainCamera.WorldToViewportPoint(objectPosition);
 
-        // // ビューポート座標がカメラの描画範囲外か判定
-        // if ((viewportPosition.x < 0 || viewportPosition.x > 1) ||
-        //     (viewportPosition.y < 0 || viewportPosition.y > 1) || 
-        //     viewportPosition.z < 0) // zが負の値ならカメラの背後
-        // {
-        //     // 範囲外なら無効化
-        //     gameObject.SetActive(false);
-        //     Debug.Log($"Object {objectAddress} disabled because it is out of view.");
-        // }
-        // else
-        // {
-        //     // 範囲内なら有効化（必要なら）
-        //     if (!gameObject.activeSelf)
-        //     {
-        //         gameObject.SetActive(true);
-        //         Debug.Log($"Object {objectAddress} re-enabled.");
-        //     }
-        // }
-        //Debug.Log("isInsideCamera: "+isInsideCamera);
-
         // ビューポート座標がカメラの描画範囲外か判定
         if (!isInsideCamera)
         {
             // 範囲外なら無効化
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            objRenderer.enabled = false;
             //Debug.Log($"Object {objectAddress} disabled because it is out of view.");
         }
         else if(isInsideCamera)
         {
             // 範囲内なら有効化（必要なら）
-            // if (!gameObject.activeSelf)
-            // {
-                gameObject.SetActive(true);
-                //Debug.Log($"Object {objectAddress} re-enabled.");
-            // }
+            if (!gameObject.activeSelf)
+            {
+                //gameObject.SetActive(true);
+                objRenderer.enabled = true;
+                Debug.Log($"Object {objectAddress} re-enabled.");
+            }
         }
     }
 
