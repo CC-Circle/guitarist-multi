@@ -2612,7 +2612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1411725976
 Transform:
   m_ObjectHideFlags: 0
@@ -2990,6 +2990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620789781}
   - component: {fileID: 1620789782}
+  - component: {fileID: 1620789783}
   m_Layer: 0
   m_Name: HumanSystem
   m_TagString: Untagged
@@ -3026,6 +3027,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyPrefab: {fileID: 5627186479390956157, guid: 7d24cffc12ce4459088ffe42d9e8ef26, type: 3}
   interval: 5
+--- !u!114 &1620789783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620789780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84fe525f8b574a2ba105a27be67f21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterSeconds: 50
 --- !u!1 &1643076431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,10 +3271,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4298337562349418981, guid: cd99dab27e9b3454a8511ea7ec15883f, type: 3}
-      propertyPath: moveSpeed
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 4895004548784530259, guid: cd99dab27e9b3454a8511ea7ec15883f, type: 3}
       propertyPath: m_Name
       value: car

@@ -73,4 +73,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84fe525f8b574a2ba105a27be67f21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 10
+  destroyAfterSeconds: 20
