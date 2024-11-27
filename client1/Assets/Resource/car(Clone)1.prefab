@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7064152481084687792
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 27.671198
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 27.671198
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 27.671198
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.241997
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 98.072
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -454.34616
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58f62b0a573a4d36b07923b8bc2e4d8, type: 2}
+    - target: {fileID: 919132149155446097, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      propertyPath: m_Name
+      value: car(Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5926415047898909098}
+  m_SourcePrefab: {fileID: 100100000, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+--- !u!1 &7983053174450845921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ffd69d52f53d94d9596304637fcda9d5, type: 3}
+  m_PrefabInstance: {fileID: 7064152481084687792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5926415047898909098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983053174450845921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9765ae80ea69e407f92f16040948095a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionAddress: 
+  cameraController: {fileID: 0}

@@ -26,7 +26,7 @@ public class VisibilityChecker : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("wwww");
+        //Debug.Log("wwww");
         // オブジェクトの中心位置を取得
         Vector3 objectPosition = transform.position;
 
@@ -77,12 +77,12 @@ public class VisibilityChecker : MonoBehaviour
 
     //カメラから外れた
     void OnBecameInvisible() {
-        Debug.Log("カメラ範囲外です");
+        //Debug.Log("カメラ範囲外です");
         isInsideCamera = false;
     }
     //カメラ内に入った
     void OnBecameVisible() {
-        Debug.Log("カメラ範囲内に入りました");
+        //Debug.Log("カメラ範囲内に入りました");
         isInsideCamera = true;
     }
 }

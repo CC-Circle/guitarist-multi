@@ -9,7 +9,7 @@ public class SendObjTransform : MonoBehaviour
     //[SerializeField] private string positionAddress = "/OscCore/float";
     
     //[SerializeField] private string rotationAddress = "/test/obj/rotation";
-    private float sendInterval = 0.1f; // 1 second
+    private float sendInterval = 0.01f; // 1 second
     private float timer;
     [SerializeField] private Camera mainCamera;
 
@@ -37,12 +37,11 @@ public class SendObjTransform : MonoBehaviour
             {
                 // オブジェクトのワールド座標を送信
                 Vector3 worldPosition = transform.position;
-                //oscSender.SendVector3Value(positionAddress, worldPosition);
-                oscSender.SendStringValue(positionAddress, worldPosition);
 
-                // ローカル回転を送信
-                // Quaternion localRotation = transform.localRotation;
-                // oscSender.SendQuaternionValue(rotationAddress, localRotation);
+                // オブジェクトの回転情報をオイラー角形式で送信
+                Vector3 eulerAngles = transform.eulerAngles;
+
+                oscSender.SendStringValue(positionAddress, worldPosition, eulerAngles);
 
                 timer = 0;
             }

@@ -12,6 +12,10 @@ public class CreateHumans : MonoBehaviour
 
     protected string instanceAdress = "/OscCore/instancemanager";
 
+    // 3秒ごとに呼び出す
+    [SerializeField]private float interval = 5f;
+    private float timer = 0f;
+
     void Start()
     {
         // DynamicObjectをシーンから探す
@@ -32,6 +36,16 @@ public class CreateHumans : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        timer += Time.deltaTime;
+        
+        if (timer >= interval)
+        {
+            timer = 0f;
+            CreateHuman();
+        }
+    }
     public void CreateHuman()
     {
         // オブジェクトを生成

@@ -20,7 +20,7 @@ public class OSCSender : MonoBehaviour
     }
 
     //指定したアドレスに対してstring型の値を送信するメソッド
-    public void SendStringValue(string address, Vector3 value)
+    public void SendStringValue(string address, Vector3 Pvalue, Vector3 Rvalue)
     {
         foreach (var client in clients)
         {
@@ -29,7 +29,7 @@ public class OSCSender : MonoBehaviour
             try
             {
                 // Vector3の値を文字列に変換
-                string valueString = $"x: {value.x}, y: {value.y}, z: {value.z}";
+                string valueString = $"x: {Pvalue.x}, y: {Pvalue.y}, z: {Pvalue.z},x: {Rvalue.x}, y: {Rvalue.y}, z: {Rvalue.z}";
 
                 // 文字列としてOSCメッセージを送信
                 client.Send(address, valueString);
