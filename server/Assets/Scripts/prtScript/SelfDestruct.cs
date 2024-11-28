@@ -32,7 +32,7 @@ public class SelfDestruct : MonoBehaviour
 
     private void DestroySelf()
     {
-        oscSender.SenddesAddress(instanceAdress,positionAddress);
+        //oscSender.SenddesAddress(instanceAdress,positionAddress);
 
         // AddressSystemにアドレスを返す
         GameObject addressSystemObject = GameObject.Find("GameSystem"); // AddressSystem がアタッチされている親オブジェクト名
