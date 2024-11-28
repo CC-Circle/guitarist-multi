@@ -74,7 +74,7 @@ public class GetObjTransform : MonoBehaviour
             Vector3 position = new Vector3(x, y, z);
             Vector3 Rotation = new Vector3(Rx, Ry, Rz);
 
-            Debug.Log(Rotation);
+            //Debug.Log(Rotation);
 
             // 受け取った位置をUnityのメインスレッドで適用
             UnityMainThreadDispatcher.Enqueue(() =>

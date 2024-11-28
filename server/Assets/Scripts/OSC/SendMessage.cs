@@ -3,8 +3,8 @@ using UnityEngine;
 public class SendMessage : MonoBehaviour
 {
     private OSCSender oscSender;
-    [SerializeField] private string address = "/test/message";
-    [SerializeField] private string message = "Hello, World!";
+    //[SerializeField] private string address = "/test/message";
+    //[SerializeField] private string message = "Hello, World!";
     private float sendInterval = 1.0f; // 1 second
     private float timer;
 

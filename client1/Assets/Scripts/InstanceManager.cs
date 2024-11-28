@@ -26,7 +26,7 @@ public class InstanceManager : MonoBehaviour
         oscReceiver = FindObjectOfType<OSCReciever>();
         if (oscReceiver == null || oscReceiver.Server == null)
         {
-            Debug.LogError("OSCReceiverまたはOSC Serverが見つかりません！");
+            Debug.LogError("OSCReceiverまたはOSC Serverが見つかりません!");
             return;
         }
 
@@ -51,26 +51,63 @@ public class InstanceManager : MonoBehaviour
         {
             string objectName = messageParts[2];
             //Debug.Log($"解析結果: {objectName}");
-
-            UnityMainThreadDispatcher.Enqueue(() =>
+            string a = messageParts[3];
+            // 文字列の最後が "-1" かを確認
+            if (a.EndsWith("-1")) 
             {
-                if (prefabDictionary.TryGetValue(objectName, out GameObject prefab))
+                UnityMainThreadDispatcher.Enqueue(() =>
                 {
-                    // InstanceManager の Transform を取得
-                    Transform instanceManagerTransform = this.transform;
+                    // 名前から "-1" を除外した部分を取得
+                    string baseName = "/" + messageParts[1] + "/" + objectName + "/" + a.Substring(0, a.LastIndexOf("-1"));
+                    Debug.Log($"検索対象: {baseName}");
 
-                    // プレハブをインスタンス化し、InstanceManager の子として配置
-                    Vector3 spawnPosition = instanceManagerTransform.position; // InstanceManager の位置
-                    GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity, instanceManagerTransform);
+                    // すべてのオブジェクトを検索
+                    GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
 
-                    obj.name = message; // オブジェクト名を設定
-                    //Debug.Log($"{objectName} を {spawnPosition} に生成し、InstanceManager の子にしました。");
-                }
-                else
+                    GameObject targetObject = null;
+
+                    foreach (GameObject obj in allObjects)
+                    {
+                        if (obj.name == baseName) // 名前が完全一致する場合
+                        {
+                            targetObject = obj;
+                            break;
+                        }
+                    }
+
+                    if (targetObject != null)
+                    {
+                        Destroy(targetObject); // オブジェクトを削除
+                        Debug.Log($"{baseName} を削除しました。");
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{baseName} に該当するオブジェクトが見つかりませんでした。");
+                    }
+                });
+            }else
+            {
+                UnityMainThreadDispatcher.Enqueue(() =>
                 {
-                    Debug.LogError($"プレハブ {objectName} が見つかりません！");
-                }
-            });
+                    if (prefabDictionary.TryGetValue(objectName, out GameObject prefab))
+                    {
+                        // InstanceManager の Transform を取得
+                        Transform instanceManagerTransform = this.transform;
+
+                        // プレハブをインスタンス化し、InstanceManager の子として配置
+                        Vector3 spawnPosition = instanceManagerTransform.position; // InstanceManager の位置
+                        GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity, instanceManagerTransform);
+
+                        obj.name = message; // オブジェクト名を設定
+                        //Debug.Log($"{objectName} を {spawnPosition} に生成し、InstanceManager の子にしました。");
+                    }
+                    else
+                    {
+                        Debug.LogError($"プレハブ {objectName} が見つかりません！");
+                    }
+                });
+            }
+            
         }
     }
 }

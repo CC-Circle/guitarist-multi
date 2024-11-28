@@ -6,9 +6,13 @@ public class SelfDestruct : MonoBehaviour
     private string positionAddress; // オブジェクトのアドレス
 
     private SendObjTransform sendObjtransform;
+    private OSCSender oscSender;
 
+    protected string instanceAdress = "/OscCore/instancemanager";
     void Start()
     {
+        oscSender = FindObjectOfType<OSCSender>();
+
         // 同じオブジェクトにアタッチされているPositionManagerを取得
         SendObjTransform sendObjtransform = GetComponent<SendObjTransform>();
 
@@ -28,6 +32,8 @@ public class SelfDestruct : MonoBehaviour
 
     private void DestroySelf()
     {
+        oscSender.SenddesAddress(instanceAdress,positionAddress);
+
         // AddressSystemにアドレスを返す
         GameObject addressSystemObject = GameObject.Find("GameSystem"); // AddressSystem がアタッチされている親オブジェクト名
         if (addressSystemObject != null)
@@ -39,6 +45,7 @@ public class SelfDestruct : MonoBehaviour
         {
             Debug.LogError("GameSystem object not found in the scene.");
         }
+
         // 自身を破壊
         Destroy(gameObject);
     }

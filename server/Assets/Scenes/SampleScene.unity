@@ -2949,8 +2949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8eac4884a644a07ba70c9e63bb9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  display1WidthAddress: /display/1/width
-  display2WidthAddress: /display/2/width
 --- !u!114 &1612616141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2997,7 +2995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1620789781
 Transform:
   m_ObjectHideFlags: 0
@@ -3275,6 +3273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: car
       objectReference: {fileID: 0}
+    - target: {fileID: 4895004548784530259, guid: cd99dab27e9b3454a8511ea7ec15883f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7011743248353554787, guid: cd99dab27e9b3454a8511ea7ec15883f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -109
@@ -3338,7 +3340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5627186479390956157, guid: 7d24cffc12ce4459088ffe42d9e8ef26, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6579976638305860264, guid: 7d24cffc12ce4459088ffe42d9e8ef26, type: 3}
       propertyPath: m_Enabled
@@ -3403,6 +3405,6 @@ SceneRoots:
   - {fileID: 1612616142}
   - {fileID: 1315055573}
   - {fileID: 3974065252577156894}
+  - {fileID: 3116565515503808663}
   - {fileID: 1643076432}
   - {fileID: 59285251}
-  - {fileID: 3116565515503808663}
