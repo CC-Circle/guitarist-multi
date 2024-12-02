@@ -7,7 +7,7 @@ public class GetObjTransform : MonoBehaviour
 {
     //OSCメッセージを受信するためのアドレス
     [SerializeField] private string positionAddress; // 位置情報を受け取るアドレス
-    [SerializeField] private string rotationAddress = "/test/obj/rotation"; // 回転情報を受け取るアドレス
+    //[SerializeField] private string rotationAddress = "/test/obj/rotation"; // 回転情報を受け取るアドレス
 
     private OSCReciever oscReceiver; // OSCReceiverのインスタンス
     // private DisplayInfoReceiver displayInfoReceiver; // 必要に応じて表示情報を管理するオブジェクト（現在はコメントアウト）
@@ -50,29 +50,38 @@ public class GetObjTransform : MonoBehaviour
     {
         // 受信したOSCメッセージから文字列を取得
         string receivedString = values.ReadStringElement(0);  // OSCメッセージの最初の要素を取得
-
+        //Debug.Log(receivedString);
         // 受信した文字列をデバッグログに表示
         //Debug.Log("Received string: " + receivedString);
 
         // 文字列を分解して座標を抽出（例: "x: 1.23, y: 4.56, z: 7.89"）
         // ここでは、"x: ", "y: ", "z: " でそれぞれの値を抽出
         string[] parts = receivedString.Split(',');
+        
 
-        if (parts.Length == 3)
+        if (parts.Length == 6)
         {
             // 各軸の値を抽出して浮動小数点数に変換
             float x = float.Parse(parts[0].Split(':')[1].Trim());
             float y = float.Parse(parts[1].Split(':')[1].Trim());
             float z = float.Parse(parts[2].Split(':')[1].Trim());
+            float Rx = float.Parse(parts[3].Split(':')[1].Trim());
+            float Ry = float.Parse(parts[4].Split(':')[1].Trim());
+            float Rz = float.Parse(parts[5].Split(':')[1].Trim());
+
 
             // Vector3に変換
             Vector3 position = new Vector3(x, y, z);
+            Vector3 Rotation = new Vector3(Rx, Ry, Rz);
+
+            //Debug.Log(Rotation);
 
             // 受け取った位置をUnityのメインスレッドで適用
             UnityMainThreadDispatcher.Enqueue(() =>
             {
                 // オブジェクトの位置を更新
                 transform.position = position;  // 位置をワールド座標で設定
+                transform.rotation = Quaternion.Euler(Rotation);  
                 //Debug.Log("Updated position to: " + position);  // 位置をデバッグログに表示
             });
         }

@@ -25,6 +25,7 @@ public class AddressSystem : MonoBehaviour
         string baseAddress = $"/OscCore/{obj.name}";
         string address = baseAddress;
         int counter = 1;
+        address = $"{baseAddress}/{counter}";
 
         // 一意のアドレスになるまで確認
         while (usedAddresses.Contains(address) || unusedAddresses.Contains(address))
@@ -36,7 +37,7 @@ public class AddressSystem : MonoBehaviour
 
         //使用済みアドレスとして登録
         usedAddresses.Add(address);
-        Debug.Log($"New address created: {address}");
+        //Debug.Log($"New address created: {address}");
         return address;
     }
 

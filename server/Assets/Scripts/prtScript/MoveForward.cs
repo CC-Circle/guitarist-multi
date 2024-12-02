@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class MoveForward : MonoBehaviour
+public class MoveForwards : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 10f;  // 移動速度の調整用変数
+    [SerializeField] private float moveSpeed = 30f;  // 移動速度の調整用変数
     private bool hasRotated = false;               // 回転済みフラグ
 
     void Update()
@@ -10,6 +10,7 @@ public class MoveForward : MonoBehaviour
         // 前方に動かす (ワールド座標系を使用)
         Vector3 movement = transform.forward * moveSpeed * Time.deltaTime;
         transform.Translate(movement, Space.World);
+
 
         // Z軸が160を超えた場合にY軸を90度回転（1回のみ）
         if (transform.position.z > 160 && !hasRotated)

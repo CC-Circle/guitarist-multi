@@ -10,6 +10,12 @@ public class CreateHumans : MonoBehaviour
     private Coroutine spawnCoroutine;  // コルーチンを制御するためのフィールド
     private OSCSender oscSender;
 
+    protected string instanceAdress = "/OscCore/instancemanager";
+
+    // 3秒ごとに呼び出す
+    [SerializeField]private float interval = 5f;
+    private float timer = 0f;
+
     void Start()
     {
         // DynamicObjectをシーンから探す
@@ -30,6 +36,16 @@ public class CreateHumans : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        timer += Time.deltaTime;
+        
+        if (timer >= interval)
+        {
+            timer = 0f;
+            CreateHuman();
+        }
+    }
     public void CreateHuman()
     {
         // オブジェクトを生成
@@ -72,7 +88,7 @@ public class CreateHumans : MonoBehaviour
     {
         if (oscSender != null)
         {
-            oscSender.SendAddress("/OscCore/instancemanager", positionAddress);  // 生成されたアドレスを送信
+            oscSender.SendAddress(instanceAdress, positionAddress);  // 生成されたアドレスを送信
             //Debug.Log($"Sent address: {positionAddress} to /OscCore/instancemanager");
         }
     }

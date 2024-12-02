@@ -3,8 +3,8 @@ using UnityEngine;
 public class DisplayInfoSender : MonoBehaviour
 {
     private OSCSender oscSender;
-    [SerializeField] private string display1WidthAddress = "/display/1/width";
-    [SerializeField] private string display2WidthAddress = "/display/2/width";
+    //[SerializeField] private string display1WidthAddress = "/display/1/width";
+    //[SerializeField] private string display2WidthAddress = "/display/2/width";
 
     public static class DisplayConstants
     {

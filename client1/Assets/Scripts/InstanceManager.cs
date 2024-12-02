@@ -26,7 +26,7 @@ public class InstanceManager : MonoBehaviour
         oscReceiver = FindObjectOfType<OSCReciever>();
         if (oscReceiver == null || oscReceiver.Server == null)
         {
-            Debug.LogError("OSCReceiverまたはOSC Serverが見つかりません！");
+            Debug.LogError("OSCReceiverまたはOSC Serverが見つかりません!");
             return;
         }
 
@@ -45,32 +45,51 @@ public class InstanceManager : MonoBehaviour
         string message = values.ReadStringElement(0);  
         //Debug.Log($"受信メッセージ: {message}");
 
-        // メッセージを解析してオブジェクト名を取得
+        // // メッセージを解析してオブジェクト名を取得
         string[] messageParts = message.Split('/');
         if (messageParts.Length >= 2)
         {
             string objectName = messageParts[2];
-            //Debug.Log($"解析結果: {objectName}");
-
+            
             UnityMainThreadDispatcher.Enqueue(() =>
             {
+                //Debug.Log($"探しているオブジェクト名: {message}");
+
+                // InstanceManager の子から同名のオブジェクトを探索
+                Transform instanceManagerTransform = this.transform;
+
+                // 子オブジェクトの中で同じ名前のオブジェクトがあるか確認
+                bool isDuplicate = false;
+                foreach (Transform child in instanceManagerTransform)
+                {
+                    if (child.name == message)
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (isDuplicate)
+                {
+                    Debug.LogWarning($"オブジェクト {message} は既に存在しています。生成をスキップします。");
+                    return;
+                }
+
                 if (prefabDictionary.TryGetValue(objectName, out GameObject prefab))
                 {
-                    // InstanceManager の Transform を取得
-                    Transform instanceManagerTransform = this.transform;
-
                     // プレハブをインスタンス化し、InstanceManager の子として配置
-                    Vector3 spawnPosition = instanceManagerTransform.position; // InstanceManager の位置
+                    Vector3 spawnPosition = instanceManagerTransform.position;
                     GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity, instanceManagerTransform);
 
-                    obj.name = message; // オブジェクト名を設定
-                    //Debug.Log($"{objectName} を {spawnPosition} に生成し、InstanceManager の子にしました。");
+                    obj.name = message; // 名前を設定
+                    Debug.Log($"オブジェクト {message} を生成しました。");
                 }
                 else
                 {
                     Debug.LogError($"プレハブ {objectName} が見つかりません！");
                 }
             });
+
         }
     }
 }

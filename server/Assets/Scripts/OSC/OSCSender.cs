@@ -20,7 +20,7 @@ public class OSCSender : MonoBehaviour
     }
 
     //指定したアドレスに対してstring型の値を送信するメソッド
-    public void SendStringValue(string address, Vector3 value)
+    public void SendStringValue(string address, Vector3 Pvalue, Vector3 Rvalue)
     {
         foreach (var client in clients)
         {
@@ -29,16 +29,16 @@ public class OSCSender : MonoBehaviour
             try
             {
                 // Vector3の値を文字列に変換
-                string valueString = $"x: {value.x}, y: {value.y}, z: {value.z}";
+                string valueString = $"x: {Pvalue.x}, y: {Pvalue.y}, z: {Pvalue.z},x: {Rvalue.x}, y: {Rvalue.y}, z: {Rvalue.z}";
 
                 // 文字列としてOSCメッセージを送信
                 client.Send(address, valueString);
 
-                //Debug.Log("Sent " + address + " " + valueString);
+                //Debug.Log("Sent "+ " " + valueString);
             }
             catch (System.Exception e)
             {
-                //Debug.Log("Error sending string: " + address + " " + value + " " + e);
+                Debug.Log("Error sending string: " + address + " " + Pvalue + " " + e);
             }
         }
     }
@@ -56,14 +56,34 @@ public class OSCSender : MonoBehaviour
                 client.Send(address, data);
 
                 // デバッグログ（送信された内容を確認）
-                Debug.Log($"Sent OSC message to {address}: {data}");
+                //Debug.Log($"Sent OSC message to {address}: {data}");
             }
             catch (System.Exception e)
             {
-                Debug.Log("Error sending string: " + address + " " + data + " " + e);
+                //Debug.Log("Error sending string: " + address + " " + data + " " + e);
             }
         }
     }
+    // public void SenddesAddress(string address, string data)
+    // {
+    //     foreach (var client in clients)
+    //     {
+    //         string Desdata = data+"-1";
+    //         if (client == null) continue;
+
+    //         try
+    //         {
+    //             // メッセージを送信
+    //             client.Send(address, Desdata);
+    //             Debug.Log("送信しました");
+
+    //         }
+    //         catch (System.Exception e)
+    //         {
+    //             //Debug.Log("Error sending string: " + address + " " + data + " " + e);
+    //         }
+    //     }
+    // }
 
 
 
