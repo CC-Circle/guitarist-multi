@@ -45,69 +45,51 @@ public class InstanceManager : MonoBehaviour
         string message = values.ReadStringElement(0);  
         //Debug.Log($"受信メッセージ: {message}");
 
-        // メッセージを解析してオブジェクト名を取得
+        // // メッセージを解析してオブジェクト名を取得
         string[] messageParts = message.Split('/');
         if (messageParts.Length >= 2)
         {
             string objectName = messageParts[2];
-            //Debug.Log($"解析結果: {objectName}");
-            string a = messageParts[3];
-            // 文字列の最後が "-1" かを確認
-            if (a.EndsWith("-1")) 
-            {
-                UnityMainThreadDispatcher.Enqueue(() =>
-                {
-                    // 名前から "-1" を除外した部分を取得
-                    string baseName = "/" + messageParts[1] + "/" + objectName + "/" + a.Substring(0, a.LastIndexOf("-1"));
-                    Debug.Log($"検索対象: {baseName}");
-
-                    // すべてのオブジェクトを検索
-                    GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-
-                    GameObject targetObject = null;
-
-                    foreach (GameObject obj in allObjects)
-                    {
-                        if (obj.name == baseName) // 名前が完全一致する場合
-                        {
-                            targetObject = obj;
-                            break;
-                        }
-                    }
-
-                    if (targetObject != null)
-                    {
-                        Destroy(targetObject); // オブジェクトを削除
-                        Debug.Log($"{baseName} を削除しました。");
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"{baseName} に該当するオブジェクトが見つかりませんでした。");
-                    }
-                });
-            }else
-            {
-                UnityMainThreadDispatcher.Enqueue(() =>
-                {
-                    if (prefabDictionary.TryGetValue(objectName, out GameObject prefab))
-                    {
-                        // InstanceManager の Transform を取得
-                        Transform instanceManagerTransform = this.transform;
-
-                        // プレハブをインスタンス化し、InstanceManager の子として配置
-                        Vector3 spawnPosition = instanceManagerTransform.position; // InstanceManager の位置
-                        GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity, instanceManagerTransform);
-
-                        obj.name = message; // オブジェクト名を設定
-                        //Debug.Log($"{objectName} を {spawnPosition} に生成し、InstanceManager の子にしました。");
-                    }
-                    else
-                    {
-                        Debug.LogError($"プレハブ {objectName} が見つかりません！");
-                    }
-                });
-            }
             
+            UnityMainThreadDispatcher.Enqueue(() =>
+            {
+                //Debug.Log($"探しているオブジェクト名: {message}");
+
+                // InstanceManager の子から同名のオブジェクトを探索
+                Transform instanceManagerTransform = this.transform;
+
+                // 子オブジェクトの中で同じ名前のオブジェクトがあるか確認
+                bool isDuplicate = false;
+                foreach (Transform child in instanceManagerTransform)
+                {
+                    if (child.name == message)
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (isDuplicate)
+                {
+                    Debug.LogWarning($"オブジェクト {message} は既に存在しています。生成をスキップします。");
+                    return;
+                }
+
+                if (prefabDictionary.TryGetValue(objectName, out GameObject prefab))
+                {
+                    // プレハブをインスタンス化し、InstanceManager の子として配置
+                    Vector3 spawnPosition = instanceManagerTransform.position;
+                    GameObject obj = Instantiate(prefab, spawnPosition, Quaternion.identity, instanceManagerTransform);
+
+                    obj.name = message; // 名前を設定
+                    Debug.Log($"オブジェクト {message} を生成しました。");
+                }
+                else
+                {
+                    Debug.LogError($"プレハブ {objectName} が見つかりません！");
+                }
+            });
+
         }
     }
 }

@@ -64,26 +64,26 @@ public class OSCSender : MonoBehaviour
             }
         }
     }
-    public void SenddesAddress(string address, string data)
-    {
-        foreach (var client in clients)
-        {
-            string Desdata = data+"-1";
-            if (client == null) continue;
+    // public void SenddesAddress(string address, string data)
+    // {
+    //     foreach (var client in clients)
+    //     {
+    //         string Desdata = data+"-1";
+    //         if (client == null) continue;
 
-            try
-            {
-                // メッセージを送信
-                client.Send(address, Desdata);
-                Debug.Log("送信しました");
+    //         try
+    //         {
+    //             // メッセージを送信
+    //             client.Send(address, Desdata);
+    //             Debug.Log("送信しました");
 
-            }
-            catch (System.Exception e)
-            {
-                //Debug.Log("Error sending string: " + address + " " + data + " " + e);
-            }
-        }
-    }
+    //         }
+    //         catch (System.Exception e)
+    //         {
+    //             //Debug.Log("Error sending string: " + address + " " + data + " " + e);
+    //         }
+    //     }
+    // }
 
 
 
